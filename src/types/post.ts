@@ -1,8 +1,13 @@
+import { FieldValue } from "firebase/firestore";
+
 export type Post = {
-  slug: string;
+  id: string;
   title: string;
-  date: string;
-  description: string;
-  authorId?: string;
-  authorName?: string;
+  content: string;
+  userId: string;
+  userDisplayName: string;
+  createdAt: Date | FieldValue;
+  likeCount: number;
+  photoURL?: string | null;
+  tags?: string[];
 }

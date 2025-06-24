@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/postcss": "^4.1.10",
     "@tailwindcss/typography": "^0.5.16",
+    "date-fns": "^4.1.0",
     "firebase": "^11.9.1",
     "gray-matter": "^4.0.3",
     "next": "15.3.4",
