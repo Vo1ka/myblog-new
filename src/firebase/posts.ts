@@ -1,5 +1,5 @@
 import { db } from './config';
-import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { Post } from '@/types/post';
 
 // Получить все посты
@@ -10,13 +10,12 @@ export async function fetchPostsFromFirebase(): Promise<Post[]> {
     const data = doc.data();
     return {
       id: doc.id,
-      slug: data.slug ?? '', // если slug нет — пустая строка (или генерируй из title)
-      title: data.title ?? '',
-      date: data.date ?? '',
-      description: data.description ?? '',
-      authorId: data.authorId ?? '',
-      authorName: data.authorName ?? '',
-      // ...другие поля по типу Post
+      title: data.title,
+      content: data.content,
+      userId: data.userId,
+      tags: data.tags || [],
+      createdAt: data.createdAt ? data.createdAt.toDate().toISOString() : '',
+      userDisplayName: data.userDisplayName
     } as Post;
   });
 }

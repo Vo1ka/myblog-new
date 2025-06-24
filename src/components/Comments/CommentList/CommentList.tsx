@@ -1,7 +1,7 @@
 'use client';
 
 import CommentItem from "../CommentItem/CommentItem";
-import type { PostComment } from "@/types/comment"; // Импортируй свой тип
+import type { PostComment } from "@/types/comment";
 
 interface CommentListProps {
   comments: PostComment[];

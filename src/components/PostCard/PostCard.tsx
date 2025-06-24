@@ -73,11 +73,17 @@ const PostCard = ({post, isFullText = false}:PostCardProps) => {
         }
       };
 
-    const formattedDate = post.createdAt?.toLocaleString?.('ru-RU', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    }) || 'Дата не указана';
+    let formattedDate = "Дата не указана";
+    if (typeof post.createdAt === "string") {
+      const d = new Date(post.createdAt);
+      if (!isNaN(d.getTime())) {
+        formattedDate = d.toLocaleDateString("ru-RU", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+      }
+    }
     return(
         <div className="bg-white rounded-lg shadow p-6 flex flex-col mb-6">
           {/* Header */}

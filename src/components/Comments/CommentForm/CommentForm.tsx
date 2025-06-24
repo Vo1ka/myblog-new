@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/firebase/config';
-// Импортируй useSelector или свой useAuth, если берёшь пользователя из Redux:
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 
@@ -17,8 +16,7 @@ const CommentForm = ({ postId, parentId = null, onSuccess }: CommentFormProps) =
   const [content, setContent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
-
-  // Получаем пользователя из redux (замени на свой способ, если есть useAuth)
+  
   const user = useSelector((state: RootState) => state.user.user);
 
   const handleSubmit = async (e: React.FormEvent) => {

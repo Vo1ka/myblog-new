@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';
 import CommentList from '../CommentList/CommentList';
 import CommentForm from '../CommentForm/CommentForm';
-import { db } from '@/firebase/config'; // Исправь путь на свой
-import type { PostComment } from '@/types/comment'; // Импортируй свой тип
+import { db } from '@/firebase/config';
+import type { PostComment } from '@/types/comment'; 
 
 interface CommentsSectionProps {
   postId: string;

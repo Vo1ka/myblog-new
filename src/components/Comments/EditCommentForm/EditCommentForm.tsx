@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { doc, serverTimestamp, updateDoc } from 'firebase/firestore';
-import { db } from '@/firebase/config'; // Исправь путь на актуальный
+import { db } from '@/firebase/config'; 
 
 interface EditFormProps {
   postId: string;

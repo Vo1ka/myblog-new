@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { db } from '@/firebase/config'; // Исправь путь на свой
+import { db } from '@/firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
@@ -17,7 +17,6 @@ const ReplyForm = ({ postId, parentId, onSuccess }: ReplyFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  // Получай пользователя из Redux или своего хука
   const user = useSelector((state: RootState) => state.user.user);
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -12,7 +12,11 @@ export default function PostList() {
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
   dispatch(fetchPostsThunk());
+  
   }, [dispatch]);
+  useEffect(()=>{
+    console.log(items)
+  },[items])
 
   if (loading) return <div>Загрузка...</div>;
   if (error) return <div>Ошибка: {error}</div>;
